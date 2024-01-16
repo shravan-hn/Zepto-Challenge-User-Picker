@@ -1,0 +1,137 @@
+.userPicker {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; 
+  max-width: 600px;
+  margin: 20px auto; 
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.label {
+  position: absolute;
+  top: 0;
+  left: 10px;
+  transition: all 0.3s ease;
+  color: #999;
+  pointer-events: none;
+  transform-origin: left top;
+  transform: translateY(-50%);
+  font-size: 16px; 
+  background-color: #fff;
+  padding: 0 4px; 
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center; 
+  gap: 10px;
+  padding: 10px 0; 
+  border-bottom: 2px solid #ddd; 
+  margin-bottom: 20px;
+  width: 100%; 
+
+  input {
+    min-width: 120px;
+    flex-grow: 1;
+    border: none;
+    outline: none;
+    font-size: 16px;
+
+    &::placeholder {
+      color: transparent;
+    }
+
+    &:focus::placeholder {
+      color: #aaa; 
+    }
+
+    &:focus ~ .label,
+    &:not(:placeholder-shown) ~ .label {
+      transform: translateY(-150%) scale(0.85);
+      color: #007bff; 
+    }
+  }
+}
+
+.chip {
+  display: flex;
+  align-items: center;
+  background-color: #e9ecef;
+  border-radius: 16px;
+  padding: 5px 10px;
+  button {
+    background: transparent;
+    border: none;
+    color: #6c757d;
+    cursor: pointer;
+    margin-left: 10px;
+    &:hover {
+      color: #dc3545;
+    }
+  }
+  .avatar, .removeButton {
+    margin-right: 5px;
+  }
+  .name {
+  margin-right: 5px;
+font-weight: bold;
+
+}
+}
+
+.userList {
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+border-radius: 8px;
+margin-top: 10px;
+display: flex;
+flex-direction: column;
+gap: 10px;
+width: 100%;
+max-height: 200px;
+overflow-y: auto;
+background-color: #fff; 
+padding: 10px;
+border: 1px solid #ddd;
+}
+
+.user {
+display: flex;
+align-items: center;
+gap: 10px;
+padding: 8px;
+cursor: pointer;
+transition: background-color 0.3s;
+&:hover {
+background-color: #f8f9fa;
+}
+.avatar {
+font-size: 24px; 
+color: #007bff;
+}
+.name, .email {
+font-size: 14px;
+color: #333;
+}
+}
+
+
+.user:nth-child(even) .avatar {
+color: #28a745;
+}
+
+.user:nth-child(odd) .avatar {
+color: #17a2b8;
+}
+
+.user:nth-child(3n) .avatar {
+color: #ffc107;
+}
+
+.user:nth-child(4n) .avatar {
+color: #dc3545;
+}
